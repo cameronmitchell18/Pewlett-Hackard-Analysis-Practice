@@ -61,8 +61,9 @@ ON departments.dept_no = dept_manager.dept_no;
 -- Joining retirement_info and dept_emp tables
 SELECT retirement_info.emp_no,
     retirement_info.first_name,
-retirement_info.last_name,
-    dept_employees.to_date
+    retirement_info.last_name,
+dept_employees.to_date
+INTO current_emp
 FROM retirement_info
 LEFT JOIN dept_employees
 ON retirement_info.emp_no = dept_employees.emp_no;
